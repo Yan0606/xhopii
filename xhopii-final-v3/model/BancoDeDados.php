@@ -21,46 +21,66 @@ class BancoDeDados{
         return($conexao);
     }
     
-    public function inserirCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha){
+    public function inserirCliente($cliente){
         
-        $conexao = conectarBD();
+        $conexao = $this->conectarBD();
         $consulta = "INSERT INTO cliente (cpf, nome, sobrenome, dataNascimento, telefone, email, senha) 
-                     VALUES ('$cpf','$nome','$sobrenome','$dataNasc','$telefone','$email','$senha')";
+                     VALUES (('".$cliente->get_Nome()."',
+                             '".$cliente->get_sobrenome()."',
+                             '".$cliente->get_cpf()."',
+                             '".$cliente->get_datanasc()."',
+                             '".$cliente->get_telefone()."',
+                             '".$cliente->get_email()."',
+                             '".$cliente->get_senha()."')";
         mysqli_query($conexao,$consulta);
     }
     
     public function inserirProduto($produto){
         
-        $conexao = conectarBD();
+        $conexao = $this->conectarBD();
         $consulta = "INSERT INTO produto (nome, fabricante, descricao, valor) 
-                     VALUES ('$produto->get_Nome()',
-                             '$produto->get_Fabricante()',
-                             '$produto->get_Descricao()',
-                             '$produto->get_Valor()')";
+                     VALUES ('".$produto->get_Nome()."',
+                             '".$produto->get_Fabricante()."',
+                             '".$produto->get_Descricao()."',
+                             '".$produto->get_Valor()."')";
         mysqli_query($conexao,$consulta);
     }
     
-    public function inserirFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $salario){
+    public function inserirFuncionario($funcionario){
         
-        $conexao = conectarBD();
+        $conexao = $this->conectarBD();
         $consulta = "INSERT INTO funcionario (cpf, nome, sobrenome, dataNascimento, telefone, email, salario) 
-                     VALUES ('$cpf','$nome','$sobrenome','$dataNasc','$telefone','$email','$salario')";
+                     VALUES ('".$funcionario->get_Nome()."',
+                             '".$funcionario->get_sobrenome()."',
+                             '".$funcionario->get_cpf()."',
+                             '".$funcionario->get_datanasc()."',
+                             '".$funcionario->get_telefone()."',
+                             '".$funcionario->get_email()."',
+                             '".$funcionario->get_salario()."')";
         mysqli_query($conexao,$consulta);
     }
     
     public function retornarClientes(){
     
-        $conexao = conectarBD();
+        $conexao = $this->conectarBD();
         $consulta = "SELECT * FROM cliente";
         $listaClientes = mysqli_query($conexao,$consulta);
         return $listaClientes;
     }
     
     public function retornarProdutos(){
-        $conexao = conectarBD();
+        $conexao = $this->conectarBD();
         $consulta = "SELECT * FROM produto";
         $listaProdutos = mysqli_query($conexao,$consulta);
         return $listaProdutos;
+    }
+
+    public function retornarFuncionarios(){
+    
+        $conexao = $this->conectarBD();
+        $consulta = "SELECT * FROM funcionario";
+        $listaClientes = mysqli_query($conexao,$consulta);
+        return $listaClientes;
     }
 
 }
