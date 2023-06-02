@@ -1,0 +1,418 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+
+body{
+    background-color: rgb(245,245,245);
+}
+
+/* ========= INICIO LOGIN ========== */
+
+.cabecalho-login{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 85px;
+    background-color: rgb(245,245,245);
+}
+
+.cabecalho-login #cabecalho-login-logo{
+    width: 50%;
+    height: 85px;
+    display: inline-block;
+}
+
+.cabecalho-login #cabecalho-login-logo h1{
+    color: rgb(251,86,48);
+    font-size: 25px;
+    display: inline;
+}
+
+.cabecalho-login #cabecalho-login-logo p{
+    color: rgb(34,34,34);
+    font-size: 1.5rem;
+    padding-left: 5%;
+    display: inline;
+}
+
+.cabecalho-login #cabecalho-login-logo img{
+    height: 60px;
+    width: 60px;
+    margin-top: 10px;
+    display: inline;
+}
+
+.cabecalho-login #cabecalho-login-ajuda{
+    width: 45%;
+    height: 85px;
+    display: inline-block;
+}
+
+.cabecalho-login #cabecalho-login-ajuda p{
+    color: rgb(251,86,48);
+    font-size: .875rem;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.menu-horizontal{
+    width: 100%;
+    background-color: rgb(251, 119, 48);
+}
+
+.menu-horizontal ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-horizontal ul li{
+    list-style: none;
+}
+
+.menu-horizontal ul li a{
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+}
+
+.menu-horizontal ul li a:hover{
+    font-weight: bold;
+    color: rgb(251,86,48);
+    background-color: rgb(255, 255, 255);
+}
+
+.conteudo-login{
+    width: 100%;
+    height: 400px;
+    background-color: rgb(251,86,48);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conteudo-login .conteudo-formulario{
+    width: 30%;
+    height: 350px;
+    background-color: rgb(255,255,255);
+    border-radius: 5px;
+}
+
+.conteudo-login .conteudo-formulario #form-log #label-log, #input-log{
+    display: block;
+    height: 40px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 25px;
+    border-radius: 1px;
+}
+
+.conteudo-login .conteudo-formulario #input-log{
+    border-color: rgba(0,0,0,.09);
+    color: rgb(0, 0, 0);
+    width: 75%;
+    padding-left: 5%;
+}
+
+.conteudo-login .conteudo-formulario #input-log :hover{
+    border-color: rgb(0, 0, 0);
+}
+
+.conteudo-login .conteudo-formulario #botao-log{
+    background-color: rgb(251,86,48);
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.conteudo-login .conteudo-formulario p{
+    text-align: center;
+    margin-top: 25px;
+    color: rgb(195, 195, 195);
+}
+
+.conteudo-login .conteudo-formulario a{
+    color: rgb(251,86,48);
+    text-decoration: none;
+}
+
+.conteudo-cadastro{
+    width: 100%;
+    background-color: rgb(195, 195, 195);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conteudo-cadastro .conteudo-formulario-cadastro{
+    width: 40%;
+    background-color: rgb(255,255,255);
+    border-radius: 5px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.conteudo-cadastro .conteudo-formulario-cadastro p{
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    color: rgb(195, 195, 195);
+}
+
+.conteudo-cadastro .conteudo-formulario-cadastro form label, input{
+    display: block;
+    height: 40px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-radius: 1px;
+}
+
+.conteudo-cadastro .conteudo-formulario-cadastro label{
+    color: rgb(251,86,48);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.conteudo-cadastro .conteudo-formulario-cadastro input{
+    border-color: rgba(0,0,0,.09);
+    color: rgb(0, 0, 0);
+    width: 55%;
+    padding-left: 5%;
+}
+
+.conteudo-cadastro .conteudo-formulario-cadastro #botao{
+    background-color: rgb(251,86,48);
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    width: 60%;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.conteudo-cadastro .conteudo-formulario-cadastro a{
+    color: rgb(251,86,48);
+    text-decoration: none;
+}
+
+.conteudo-visualizar{
+    width: 100%;
+    background-color: rgb(195, 195, 195);
+}
+
+.conteudo-visualizar .conteudo-visualizar-box{
+    width: 80%;
+    margin-left: 10%;
+    background-color: rgb(240,240,240);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.conteudo-visualizar .conteudo-visualizar-box h1{
+    color: rgb(251,86,48);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.conteudo-visualizar .conteudo-visualizar-box .conteudo-bloco{
+    width: 60%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.conteudo-visualizar .conteudo-visualizar-box .conteudo-bloco h2{
+    color: rgb(251,86,48);
+    font-weight: bold;
+}
+
+.rodape-login{
+    width: 60%;
+    height: 250px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.rodape-login img{
+    width: 60%;
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.rodape-login p{
+    text-align: center;
+    margin-top: 20px;
+    color: rgb(34,34,34);
+}
+
+/* ========= FIM LOGIN ========== */
+
+.conteudo-home{
+    width: 80%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 10%;
+    background-color: rgb(255,255,255);
+}
+
+.conteudo-home img{
+    width: 90%;
+    margin-left: 5%;
+}
+
+header{
+    height: 85px;
+    width: 100%;
+    background-color: rgb(251,86,48);
+    display: flex;
+    justify-content: center;
+}
+
+header #cabecalho-logo h1{
+    color: rgb(255, 255, 255);
+    font-size: 45px;
+    display: inline;
+}
+
+header #cabecalho-logo img{
+    height: 60px;
+    width: 60px;
+    margin-top: 5px;
+    display: inline;
+}
+
+header #cabecalho-logo{
+    width: 18%;
+    margin-left: 2%;
+    margin-right: 30%;
+}
+
+header #cabecalho-logout{
+    width: 20%;
+    margin-left: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header #cabecalho-logout a{
+    margin-right: 10%;
+    text-decoration: none;
+    color: rgb(255,255,255);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.produto-imagem{
+    margin-top: 50px;
+    margin-left: 10%;
+    height: 600px;
+    width: 40%;
+    float: left;
+    position: absolute;
+}
+
+.produto-miniatura{
+    height: 600px;
+    width: 10%;
+    float: left;
+}
+
+.produto-miniatura img{
+    height: 90px;
+    margin-top: 10px;
+    display: block;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.produto-miniatura img:hover{
+    opacity: 1;
+    border: 2px solid rgb(251,86,48);
+}
+
+.produto-principal{
+    height: 600px;
+    width: 75%;
+    margin-top: 10px;
+    margin-left: 10%;
+    margin-right: 5%;
+    float: right;
+}
+
+.produto-principal img{
+    height: 490px;
+    width: 100%;
+}
+
+.produto-detalhes{
+    margin-top: 50px;
+    margin-right: 10%;
+    height: 600px;
+    width: 40%;
+    float: right;
+}
+
+.produto-detalhes p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.produto-detalhes .botao{
+    height: 40px;
+    cursor: pointer;
+    background-color: rgba(255,255,255);
+    color: rgba(0,0,0,.8);
+    border: 1px solid rgba(0,0,0,.09);
+    margin: 10px 8px 8px 10px;
+    padding: 0.25rem 0.75rem;
+    justify-content: center;
+}
+
+.produto-detalhes .botao:hover{
+    color: rgb(251,86,48);
+    border: 1px solid rgb(251,86,48);
+}
+
+.produto-detalhes #botaoComprar{
+    height: 60px;
+    cursor: pointer;
+    background-color: rgb(251,86,48);
+    color: rgb(255,255,255);
+    border: 1px solid rgb(251,86,48);
+    margin: 10px 8px 8px 10px;
+    padding: 0.25rem 0.75rem;
+    justify-content: center;
+}
+
+.produto-detalhes #botaoComprar:hover{
+    opacity: 0.9;
+}
+
+.produto-detalhes #precoProduto{
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.875rem;
+    color: rgb(251,86,48);
+}
