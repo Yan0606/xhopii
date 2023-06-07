@@ -1,9 +1,9 @@
-<?php
+
     
-    require_once "../controller/Controlador.php";
+    
     
 
-?>
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -43,6 +43,7 @@
             <h1>Funcionários</h1>
             <!-- INSERIR AQUI O RESULTADO DA CONSULTA POR FUNCIONÁRIOS -->
             <?php
+                require_once "../controller/Controlador.php";
                 $controlador = new Controlador();
                 echo $controlador->visualizarFuncionarios();
             ?>

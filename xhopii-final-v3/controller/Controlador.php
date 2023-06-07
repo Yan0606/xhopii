@@ -22,16 +22,17 @@ class Controlador{
     }
 
     public function visualizarProdutos(){
-        
+        $dados = "";
         $listaProdutos = $this->bancoDeDados->retornarProdutos();
         while($produto = mysqli_fetch_assoc($listaProdutos)){
-            return "<section class=\"conteudo-bloco\">" .
+            $dados .="<section class=\"conteudo-bloco\">" .
                    "<h2>" . $produto["nome"] . "</h2>" .
                    "<p>Fabricante: " . $produto["fabricante"] . "</p>" .
                    "<p>Descrição: " . $produto["descricao"] . "</p>" . 
                    "<p>Valor: " . $produto["valor"] . "</p>" .
                    "</section>";
         }
+        return $dados;
     }
 
     public function cadastrarCliente( $nome,$cpf, $sobrenome,$dataNascimento, $telefone, $email, $senha){
@@ -46,8 +47,8 @@ class Controlador{
         $listaClientes =  $this->bancoDeDados->retornarClientes();
          while($cliente = mysqli_fetch_assoc($listaClientes)){
             $dados.="<section class=\"conteudo-bloco\">".
-             "<h2>" . $cliente["cpf"] . " " . "<h2>" . 
-             "<p>Nome: " . $cliente["nome"] . "</h2>".
+             "<h2>" . $cliente["nome"] . " " . "</h2>" . 
+             "<p>CPF: " . $cliente["cpf"] . "".
              "<p>Sobrenome: " . $cliente["sobrenome"] . "</p>".
              "<p>Data Nascimento: " . $cliente["dataNascimento"] . "</p>".
              "<p>Telefone: " . $cliente["telefone"] . "</p>".
@@ -66,16 +67,19 @@ class Controlador{
 
     public function visualizarFuncionarios(){
         $listaFuncionarios =  $this->bancoDeDados->retornarFuncionarios();
-        while($funcionario = mysqli_fetch_assoc($listaFuncionarios)){
-            "<section class=\"conteudo-bloco\">".
-             "<h2>" . $funcionario["nome"] . " " . $funcionario["sobrenome"] . "</h2>".
-             "<p>CPF: " . $funcionario["cpf"] . "</p>".
-             "<p>Data Nascimento: " . $funcionario["dataNascimento"] . "</p>".
-             "<p>Telefone: " . $funcionario["telefone"] . "</p>".
-             "<p>E-mail: " . $funcionario["email"] . "</p>".
-             "</section>";
+        $dados = "";
+        while($funcionarios = mysqli_fetch_assoc($listaFuncionarios)){
+            $dados .= "<section class=\"conteudo-bloco\">
+            <h2>".$funcionarios['nome']."&nbsp;".$funcionarios['sobrenome']."</h2>
+            <p>CPF: ".$funcionarios['cpf']."</a><br>
+            <p>Data de nascimento:".$funcionarios['dataNascimento']."</a><br>
+            <p>Telefone: ".$funcionarios['telefone']."</a><br>
+            <p>Email: ".$funcionarios['email']."</a><br>
+            <p>Salario: R$ ".$funcionarios['salario']."</a>
+            </section>";
         
         }
+        return $dados;
     }
 
 }
