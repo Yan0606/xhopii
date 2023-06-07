@@ -1,8 +1,10 @@
 <?php
 
+require_once"../model/BancoDeDados.php";
 require_once"../model/Cliente.php";
 require_once"../model/Funcionario.php";
 require_once"../model/Produto.php";
+
 
 class Controlador{
 
@@ -32,30 +34,33 @@ class Controlador{
         }
     }
 
-    public function cadastrarCliente( $nome, $sobrenome,$cpf, $dataNasc, $telefone, $email, $senha){
+    public function cadastrarCliente( $nome,$cpf, $sobrenome,$dataNascimento, $telefone, $email, $senha){
 
-        $cliente = new Cliente( $nome, $sobrenome,$cpf, $dataNasc, $telefone, $email, $senha);
+        $cliente = new Cliente($nome,$cpf,  $sobrenome, $dataNascimento, $telefone, $email, $senha);
         $this->bancoDeDados->inserirCliente($cliente);
     }
 
 
     public function visualizarClientes(){
+        $dados = "";
         $listaClientes =  $this->bancoDeDados->retornarClientes();
-        while($cliente = mysqli_fetch_assoc($listaClientes)){
-            "<section class=\"conteudo-bloco\">".
-             "<h2>" . $cliente["cpf"] . " " . $cliente["nome"] . "</h2>".
-             "<p>CPF: " . $cliente["sobrenome"] . "</p>".
-             "<p>Data Nascimento: " . $cliente["dataNasc"] . "</p>".
+         while($cliente = mysqli_fetch_assoc($listaClientes)){
+            $dados.="<section class=\"conteudo-bloco\">".
+             "<h2>" . $cliente["cpf"] . " " . "<h2>" . 
+             "<p>Nome: " . $cliente["nome"] . "</h2>".
+             "<p>Sobrenome: " . $cliente["sobrenome"] . "</p>".
+             "<p>Data Nascimento: " . $cliente["dataNascimento"] . "</p>".
              "<p>Telefone: " . $cliente["telefone"] . "</p>".
              "<p>E-mail: " . $cliente["email"] . "</p>".
              "<p>Senha: " . $cliente["senha"] . "</p>".
              "</section>";
         }
+        return $dados;
     }
 
-    public function cadastrarFuncionario( $nome, $sobrenome,$cpf, $dataNasc, $telefone, $email, $salario){
+    public function cadastrarFuncionario( $nome,$cpf, $sobrenome, $dataNasc, $telefone, $email, $salario){
 
-        $funcionario = new Funcionario( $nome, $sobrenome,$cpf, $dataNasc, $telefone, $email, $salario);
+        $funcionario = new Funcionario( $nome,$cpf, $sobrenome, $dataNasc, $telefone, $email, $salario);
         $this->bancoDeDados->inserirFuncionario($funcionario);
     }
 

@@ -3,19 +3,19 @@
 class Cliente{
       //Atributos
       protected $nome;
-      protected $sobrenome;
       protected $cpf;
-      protected $dataNasc;
+      protected $sobrenome;
+      protected $dataNascimento;
       protected $telefone;
       protected $email;
       protected $senha;
   
       //Construtor
-      public function __construct($nome,$sobrenome,$cpf,$dataNasc, $telefone, $email,$senha){
+      public function __construct($nome,$cpf,$sobrenome,$dataNascimento, $telefone, $email,$senha){
           $this->nome = $nome;
-          $this->sobrenome = $sobrenome;
           $this->cpf = $cpf;
-          $this->dataNasc = $dataNasc;
+          $this->sobrenome = $sobrenome;    
+          $this->dataNascimento = $dataNascimento;
           $this->telefone = $telefone;
           $this->email = $email;
           $this->senha = $senha;
@@ -46,12 +46,12 @@ class Cliente{
           $this->cpf = $cpf;
       }
   
-      public function get_dataNasc(){
-          return($this->dataNasc);
+      public function get_dataNascimento(){
+          return($this->dataNascimento);
       }
   
-      public function set_dataNasc($dataNasc){
-          $this->dataNasc = $dataNasc;
+      public function set_dataNascimento($dataNascimento){
+          $this->dataNascimento = $dataNascimento;
       }
   
       public function get_telefone(){

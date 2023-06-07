@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require "../model/BancoDeDados.php";
+
 require_once("../model/Produto.php");
 require_once("../controller/Controlador.php");
 
@@ -21,19 +21,19 @@ if(!empty($_POST['inputEmailLog']) && !empty($_POST['inputSenhaLog'])){
 
 //Cadastro de Cliente
 if(!empty($_POST['inputNome']) && !empty($_POST['inputSobrenome']) && 
-   !empty($_POST['inputCPF']) && !empty($_POST['inputDataNasc']) && 
+   !empty($_POST['inputCPF']) && !empty($_POST['inputDataNascimento']) && 
    !empty($_POST['inputTelefone']) && !empty($_POST['inputEmail']) &&
    !empty($_POST['inputSenha'])){
 
     $nome = $_POST['inputNome'];
     $sobrenome = $_POST['inputSobrenome'];
     $cpf = $_POST['inputCPF'];
-    $dataNasc = $_POST['inputDataNasc'];
+    $dataNascimento = $_POST['inputDataNascimento'];
     $telefone = $_POST['inputTelefone'];
     $email = $_POST['inputEmail'];
     $senha = $_POST['inputSenha'];
     
-    $controlador->cadastrarCliente( $nome, $sobrenome,$cpf, $dataNasc, $telefone, $email, $senha);
+    $controlador->cadastrarCliente( $cpf,$nome, $sobrenome, $dataNascimento, $telefone, $email, $senha);
 
     header('Location:../view/cadastroCliente.php');
     die();
