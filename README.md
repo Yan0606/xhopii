@@ -1,22 +1,21 @@
 # 🛒 E-commerce PHP MVC
 
-Welcome to the E-commerce Project repository! This project is an e-commerce application developed in PHP, following the Model-View-Controller (MVC) architecture pattern and using the MySQL Server relational database.
+Welcome to the E-commerce Project repository! This project is a management system for customer, employee, and product registration, developed in PHP. It follows the Model-View-Controller (MVC) architecture pattern and uses the MySQL Server relational database.
 
 ## 🌐 Overview
 
-The E-commerce Project is a comprehensive platform for online buying and selling. By adhering to the MVC pattern, the code is organized in a modular way, making maintenance and scalability of the application straightforward.
+The E-commerce Project is designed for managing customer, employee, and product information. By adhering to the MVC pattern, the code is organized in a modular way, making maintenance and scalability of the application straightforward.
 
 ## 🛠 Technologies Used
 
 - **PHP**: Programming language used for the application's logic.
 - **MySQL Server**: Relational database for data storage.
-- **HTML, CSS**: Frontend of the application.
+- **HTML, CSS, JavaScript**: Frontend of the application.
 - **MVC**: Architecture pattern for separation of concerns.
 
 ## 🚀 Features
 
-- User, customer, and product registration.
-- Shopping cart for adding and removing items.
+- Registration of customers, employees, and products.
 
 ## 📂 Directory Structure
 
